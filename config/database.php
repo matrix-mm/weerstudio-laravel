@@ -19,7 +19,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql',"client_encoding": "utf8mb4"),
+    'default' => env('DB_CONNECTION', 'pgsql'),
    
 
 
@@ -77,6 +77,7 @@ return [
             'username' => $DATABASE_URL["user"],
             'password' => $DATABASE_URL["pass"],
             'charset' => 'utf8',
+            'client_encoding'=>'utf8mb4',
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
