@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Str;
 
+$DATABASE_URL = parse_url('postgres://euphltnkdiqapa:0a85ce156d7ed12812e45a86f27cd6478cdb8bb777a8295a4c2585fc58936431@ec2-54-208-104-27.compute-1.amazonaws.com:5432/d6nvi5lspcadha
+');
+
+
 return [
 
     /*
@@ -15,7 +19,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -63,20 +67,19 @@ return [
             ]) : [],
         ],
 
-        'pgsql' => [
+'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => $DATABASE_URL["host"],
+            'port' => $DATABASE_URL["port"],
+            'database' => ltrim($DATABASE_URL["path"], "/"),
+            'username' => $DATABASE_URL["euphltnkdiqapa"],
+            'password' => $DATABASE_URL["0a85ce156d7ed12812e45a86f27cd6478cdb8bb777a8295a4c2585fc58936431"],
             'charset' => 'utf8',
             'prefix' => '',
-            'prefix_indexes' => true,
             'schema' => 'public',
-            'sslmode' => 'prefer',
+            'sslmode' => 'require',
         ],
+
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
