@@ -10,9 +10,7 @@
     
         <!-- Styles -->
         
-
-        
-            <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom.css')}}">
+            <link rel='stylesheet' type='text/css' href='assets/css/custom.css' />
         
     </head>
    
