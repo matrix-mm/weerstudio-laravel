@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Str;
 
-$DATABASE_URL = parse_url(getenv("postgres://dzbasspjiwdbxl:c0345de9b56644d5ffc73f219f3ff0da129dfc9cb0b8e2ea15a6a5066461510a@ec2-52-204-157-26.compute-1.amazonaws.com:5432/de7oug9amaeq2q"));
+$DATABASE_URL = parse_url("postgres://dzbasspjiwdbxl:c0345de9b56644d5ffc73f219f3ff0da129dfc9cb0b8e2ea15a6a5066461510a@ec2-52-204-157-26.compute-1.amazonaws.com:5432/de7oug9amaeq2q");
 
 return [
 
@@ -70,16 +70,18 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => $DATABASE_URL["ec2-52-204-157-26.compute-1.amazonaws.com"],
-            'port' => $DATABASE_URL["5432"],
+            'host' => $DATABASE_URL["host"],
+            'port' => $DATABASE_URL["port"],
             'database' => ltrim($DATABASE_URL["path"], "/"),
-            'username' => $DATABASE_URL["dzbasspjiwdbxl"],
-            'password' => $DATABASE_URL["c0345de9b56644d5ffc73f219f3ff0da129dfc9cb0b8e2ea15a6a5066461510a"],
+            'username' => $DATABASE_URL["user"],
+            'password' => $DATABASE_URL["pass"],
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
             'sslmode' => 'require',
         ],
+
+
 
 
         'sqlsrv' => [
