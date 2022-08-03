@@ -71,11 +71,11 @@ return [
 
 'pgsql' => [
             'driver' => 'pgsql',
-            'host' => $DATABASE_URL["host"],
-            'port' => $DATABASE_URL["port"],
+            'host' => $DATABASE_URL["ec2-54-208-104-27.compute-1.amazonaws.com"],
+            'port' => $DATABASE_URL["5432"],
             'database' => ltrim($DATABASE_URL["path"], "/"),
-            'username' => $DATABASE_URL["user"],
-            'password' => $DATABASE_URL["pass"],
+            'username' => $DATABASE_URL["euphltnkdiqapa"],
+            'password' => $DATABASE_URL["0a85ce156d7ed12812e45a86f27cd6478cdb8bb777a8295a4c2585fc58936431"],
             'charset' => 'utf8',
             'client_encoding'=>'utf8mb4',
             'prefix' => '',
