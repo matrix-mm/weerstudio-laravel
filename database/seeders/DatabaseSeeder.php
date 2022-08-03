@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Faker\Factory;
 
 
 class DatabaseSeeder extends Seeder
